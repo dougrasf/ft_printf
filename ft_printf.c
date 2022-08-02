@@ -110,10 +110,7 @@ int ft_printer(char  conv, va_list *ap)
 
 	ret = 0;
 	if (conv == '%')
-	{	
-		write(1, "%", 1);
-		ret++;
-	}
+		ret += write(1, "%", 1);
 	if (conv == 'c')
 		ret += ft_putchar(va_arg(*ap, int));
 	if (conv == 's')
