@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 21:09:49 by dofranci          #+#    #+#             */
-/*   Updated: 2022/08/03 21:55:20 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/08/10 20:45:44 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-int	ft_putstr(char *s)
+static int	ft_putstr(char *s)
 {
 	int	ret;
 	int	i;
@@ -28,14 +28,11 @@ int	ft_putstr(char *s)
 	if (!s)
 		s = "(null)";
 	while (s[++i])
-	{
-		write(1, &s[i], 1);
-		ret++;
-	}
+		ret += write(1, &s[i], 1);
 	return (ret);
 }
 
-int	ft_printer(char conv, va_list *ap)
+static int	ft_printer(char conv, va_list *ap)
 {
 	int	ret;
 
@@ -69,10 +66,7 @@ int	ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] != '%')
-		{
-			write(1, &format[i], 1);
-			ret++;
-		}
+			ret += write(1, &format[i], 1);
 		if (format[i] == '%')
 		{
 			i++;

@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 21:09:32 by dofranci          #+#    #+#             */
-/*   Updated: 2022/08/03 21:57:44 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/08/10 20:42:18 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ int	ft_putptr2(unsigned long int n);
 int	ft_putptr(unsigned long long int n);
 int	ft_putx(unsigned int n, char conv);
 int	ft_putchar(char c);
-int	ft_putstr(char *s);
 
 #endif

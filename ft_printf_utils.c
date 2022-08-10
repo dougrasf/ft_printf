@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 21:17:07 by dofranci          #+#    #+#             */
-/*   Updated: 2022/08/04 18:54:58 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/08/10 20:44:03 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int	ft_putnbr(int n)
 	ret = 0;
 	if (n < 0)
 	{
-		write(1, "-", 1);
-		ret++;
+		ret += write(1, "-", 1);
 		n *= -1;
 	}
 	return (ft_putnbr2(n) + ret);
